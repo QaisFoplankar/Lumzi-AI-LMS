@@ -1,0 +1,9 @@
+{
+  "name": "staging",
+  "label": "STAGING",
+  "version": "0.1.0-staging",
+  "host": "127.0.0.1",
+  "port": 5520,
+  "storageKey": "lz-lms-staging-v1",
+  "banner": true
+}

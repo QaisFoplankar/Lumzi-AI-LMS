@@ -1,0 +1,161 @@
+/* =====================================================================
+   Lumzi LMS: depth, motion and background art.
+   Loaded after styles.css, only by lms.html.
+   ===================================================================== */
+
+/* ---------- Background art: dot field + slow drifting colour light ---------- */
+.bg-art{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden;view-transition-name:bgart}
+.bg-art .dots{position:absolute;inset:0;background-image:radial-gradient(color-mix(in srgb,var(--brand) 24%,transparent) 1px,transparent 1.5px);background-size:24px 24px;
+  -webkit-mask-image:radial-gradient(ellipse 75% 60% at 78% 0%,#000 8%,transparent 72%);mask-image:radial-gradient(ellipse 75% 60% at 78% 0%,#000 8%,transparent 72%)}
+.bg-art .orb{position:absolute;border-radius:50%;filter:blur(72px);opacity:.5}
+.bg-art .o1{width:46vw;height:46vw;max-width:640px;max-height:640px;right:-12vw;top:-20vw;background:#B9BCFF;animation:orbA 34s ease-in-out infinite alternate}
+.bg-art .o2{width:34vw;height:34vw;max-width:460px;max-height:460px;left:-14vw;top:38vh;background:#BDEBD7;animation:orbB 42s ease-in-out infinite alternate}
+.bg-art .o3{width:24vw;height:24vw;max-width:340px;max-height:340px;right:10vw;bottom:-12vw;background:#FFE3A3;opacity:.4;animation:orbA 48s ease-in-out infinite alternate-reverse}
+.bg-art .arcs{position:absolute;right:-140px;top:-140px;width:620px;height:620px;color:var(--brand);opacity:.13}
+@keyframes orbA{to{transform:translate3d(-6vw,6vh,0) scale(1.08)}}
+@keyframes orbB{to{transform:translate3d(6vw,-6vh,0) scale(.94)}}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .bg-art .orb{opacity:.16}:root:not([data-theme="light"]) .bg-art .arcs{opacity:.2}}
+:root[data-theme="dark"] .bg-art .orb{opacity:.16}
+:root[data-theme="dark"] .bg-art .arcs{opacity:.2}
+
+/* glass on surfaces that float over the art */
+.dhero,.course-hero{background:transparent;border-bottom:0}
+.dstat{background:color-mix(in srgb,var(--surface) 80%,transparent);backdrop-filter:blur(14px) saturate(1.4);-webkit-backdrop-filter:blur(14px) saturate(1.4);border-color:color-mix(in srgb,var(--line) 70%,transparent)}
+.topbar{border-bottom-color:transparent;box-shadow:0 1px 0 color-mix(in srgb,var(--line) 70%,transparent)}
+
+/* ---------- Text motion: words rise in with a slight 3D flip ---------- */
+.split{perspective:700px}
+.split .sw{display:inline-block;transform-origin:50% 100%;animation:wordIn .8s var(--ease-out) backwards;animation-delay:calc(60ms + var(--i) * 55ms)}
+@keyframes wordIn{from{opacity:0;transform:translateY(.5em) rotateX(-60deg);filter:blur(6px)}}
+.lead-in{animation:fadeUp .6s var(--ease-out) .28s backwards}
+
+/* list items arrive one after another, only when a page opens */
+.stagger .cgrid>*,.stagger .clist>*,.stagger .lessons>li,.stagger .table>.trow,.stagger .results>*{animation:fadeUp .5s var(--ease-out) backwards}
+.stagger .cgrid>*:nth-child(2),.stagger .clist>*:nth-child(2),.stagger .lessons>li:nth-child(2),.stagger .table>.trow:nth-child(2){animation-delay:.05s}
+.stagger .cgrid>*:nth-child(3),.stagger .clist>*:nth-child(3),.stagger .lessons>li:nth-child(3),.stagger .table>.trow:nth-child(3){animation-delay:.1s}
+.stagger .cgrid>*:nth-child(4),.stagger .clist>*:nth-child(4),.stagger .lessons>li:nth-child(4),.stagger .table>.trow:nth-child(4){animation-delay:.15s}
+.stagger .cgrid>*:nth-child(5),.stagger .lessons>li:nth-child(5),.stagger .table>.trow:nth-child(5){animation-delay:.2s}
+.stagger .cgrid>*:nth-child(n+6),.stagger .lessons>li:nth-child(n+6),.stagger .table>.trow:nth-child(n+6){animation-delay:.25s}
+
+/* ---------- Dashboard hero with a 3D course stack ---------- */
+.dhero .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:12px 32px;align-items:center}
+.dhero .dstats{grid-column:1/-1}
+.scene{position:relative;height:300px;perspective:1100px;user-select:none;-webkit-user-select:none}
+.stage3d{position:absolute;inset:0;transform-style:preserve-3d;transform:rotateX(calc(16deg + var(--rx,0deg))) rotateY(calc(-22deg + var(--ry,0deg)))}
+.scene .ring{position:absolute;left:50%;top:52%;width:330px;height:330px;margin:-165px 0 0 -165px;border-radius:50%;border:1.5px dashed color-mix(in srgb,var(--brand) 35%,transparent);transform:rotateX(72deg) translateZ(-60px);animation:ringSpin 50s linear infinite}
+.scene .ring.r2{width:240px;height:240px;margin:-120px 0 0 -120px;border-style:solid;border-color:color-mix(in srgb,var(--brand) 18%,transparent);animation-duration:70s;animation-direction:reverse}
+@keyframes ringSpin{to{transform:rotateX(72deg) translateZ(-60px) rotate(360deg)}}
+.scene .glow{position:absolute;left:50%;top:55%;width:260px;height:120px;margin:-60px 0 0 -130px;border-radius:50%;background:radial-gradient(closest-side,color-mix(in srgb,var(--brand) 30%,transparent),transparent);transform:rotateX(72deg) translateZ(-90px);filter:blur(10px)}
+.slot{position:absolute;transform-style:preserve-3d;transform:translate3d(0,0,var(--z))}
+.slot.s1{left:4%;top:4%;--z:90px}
+.slot.s2{left:40%;top:36%;--z:30px}
+.slot.s3{left:12%;top:68%;--z:-30px}
+.tile3d{width:220px;padding:12px 14px;border-radius:18px;background:color-mix(in srgb,var(--surface) 82%,transparent);backdrop-filter:blur(16px) saturate(1.5);-webkit-backdrop-filter:blur(16px) saturate(1.5);
+  border:1px solid color-mix(in srgb,#fff 55%,transparent);box-shadow:0 32px 50px -26px rgba(15,23,42,.5),inset 0 1px 0 rgba(255,255,255,.6);
+  display:grid;grid-template-columns:44px minmax(0,1fr);gap:2px 12px;align-items:center;animation:bob 7s ease-in-out infinite;text-decoration:none;color:var(--ink)}
+.slot.s2 .tile3d{animation-delay:-2.3s}
+.slot.s3 .tile3d{animation-delay:-4.6s}
+@keyframes bob{50%{transform:translateY(-10px)}}
+.tile3d .cthumb{width:44px;height:44px;grid-row:span 2;border-radius:12px}
+.tile3d b{font-size:14px;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tile3d small{color:var(--muted);font-size:12.5px}
+.tile3d .mini{grid-column:1/-1;height:5px;border-radius:5px;background:var(--line);overflow:hidden;margin-top:8px}
+.tile3d .mini i{display:block;height:100%;border-radius:inherit;background:var(--brand);transform-origin:left;transform:scaleX(var(--p))}
+.tile3d .mini i.ok{background:var(--ok)}
+.scene .spark{position:absolute;width:8px;height:8px;border-radius:50%;background:var(--sun);box-shadow:0 0 14px var(--sun);animation:bob 5s ease-in-out infinite}
+@media (max-width:900px){
+  .dhero .wrap{grid-template-columns:minmax(0,1fr)}
+  .scene{height:250px;margin-top:4px}
+  .stage3d{transform:rotateX(calc(16deg + var(--rx,0deg))) rotateY(calc(-18deg + var(--ry,0deg))) scale(.86)}
+}
+@media (max-width:420px){.slot.s2{left:28%}.tile3d{width:196px}}
+
+/* ---------- Course cards: 3D tilt that follows the pointer ---------- */
+.ccard{position:relative;--px:0;--py:0;--lift:0px;
+  transform:perspective(900px) rotateX(calc(var(--py) * -5deg)) rotateY(calc(var(--px) * 6deg)) translateY(var(--lift));
+  transition:transform .7s var(--ease-out),border-color .2s ease,box-shadow .35s var(--ease-out)}
+.ccard.tilting{transition:transform .12s linear,border-color .2s ease,box-shadow .35s var(--ease-out)}
+@media (hover:hover) and (pointer:fine){
+  .ccard:hover{--lift:-4px;transform:perspective(900px) rotateX(calc(var(--py) * -5deg)) rotateY(calc(var(--px) * 6deg)) translateY(var(--lift));box-shadow:0 28px 50px -30px rgba(15,23,42,.55)}
+}
+.ccard::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .3s ease;
+  background:radial-gradient(420px circle at var(--mx,50%) var(--my,0%),rgba(255,255,255,.22),transparent 45%)}
+.ccard.tilting::after{opacity:1}
+.cover{height:140px;align-items:flex-start;background:
+  radial-gradient(120% 120% at 0% 0%,rgba(255,255,255,.3),transparent 50%),
+  linear-gradient(135deg,var(--cc),color-mix(in srgb,var(--cc) 55%,#000))}
+.cover .appicon{position:relative;z-index:1;width:78px;height:78px;border-radius:21px;background:linear-gradient(180deg,#fff,#EEF0FA);padding:13px;
+  box-shadow:inset 0 2px 0 #fff,0 22px 30px -14px rgba(0,0,20,.6),0 4px 10px -4px rgba(0,0,20,.4);
+  transform:translate3d(calc(var(--px) * -10px),calc(var(--py) * -8px),0);transition:transform .7s var(--ease-out)}
+.ccard.tilting .appicon,.ccard.tilting .ghost{transition-duration:.12s;transition-timing-function:linear}
+.cover .appicon svg{width:100%;height:100%;display:block}
+.cover .appicon.txt{display:grid;place-items:center;font-weight:900;font-size:24px;letter-spacing:-.03em;color:var(--cc);padding:0}
+.cover .ghost{position:absolute;right:-22px;bottom:-40px;width:160px;height:160px;opacity:.18;filter:grayscale(1) brightness(4);
+  transform:rotate(-14deg) translate3d(calc(var(--px) * 10px),calc(var(--py) * 8px),0);transition:transform .7s var(--ease-out)}
+.cover .ghost svg{width:100%;height:100%}
+.cover .badge{position:relative;z-index:1}
+
+/* ---------- Course photos ---------- */
+.cover.photo{height:160px;background:var(--cc)}
+.cover .cover-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.06) translate3d(calc(var(--px) * -6px),calc(var(--py) * -5px),0);transition:transform .7s var(--ease-out)}
+.ccard.tilting .cover-img{transition-duration:.12s;transition-timing-function:linear}
+.cover.photo::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(5,6,26,.05) 30%,rgba(5,6,26,.45))}
+.cover.photo .ghost{display:none}
+.cover.photo .appicon{width:60px;height:60px;border-radius:17px;padding:10px;margin-top:auto;align-self:flex-end}
+.course-hero .wrap{grid-template-columns:auto minmax(0,1fr) minmax(0,380px)}
+.course-photo{margin:0;border-radius:22px;overflow:hidden;aspect-ratio:16/10;box-shadow:0 30px 60px -30px rgba(15,23,42,.5);transform:perspective(1000px) rotateY(-8deg) rotateX(3deg);transition:transform .6s var(--ease-out)}
+.course-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.cover.photo.fit{background:var(--fitbg)}
+.cover.photo.fit .appicon{display:none}
+.cover.photo.fit .badge{position:absolute;bottom:8px;left:12px;top:auto}
+.cover.photo.fit .cover-img{padding:8px 8px 38px}
+.cover.fit .cover-img{object-fit:contain;padding:8px;box-sizing:border-box}
+.cover.photo.fit::before{background:linear-gradient(180deg,transparent 55%,rgba(5,6,26,.18))}
+.course-photo.fit{background:var(--fitbg)}
+.course-photo.fit img{object-fit:contain;padding:10px;box-sizing:border-box}
+@media (hover:hover) and (pointer:fine){.course-photo:hover{transform:perspective(1000px) rotateY(0) rotateX(0)}}
+@media (max-width:980px){.course-hero .wrap{grid-template-columns:auto minmax(0,1fr)}.course-photo{grid-column:1/-1;transform:none;aspect-ratio:16/8}}
+@media (max-width:640px){.course-hero .wrap{grid-template-columns:minmax(0,1fr)}}
+@media (prefers-reduced-motion:reduce){.course-photo,.cover .cover-img{transform:none}}
+
+/* ---------- Course page hero: floating icon ---------- */
+.course-hero .cthumb{width:132px;height:132px;border-radius:30px;view-transition-name:hero-icon;animation:bobSlow 8s ease-in-out infinite}
+.course-hero .cthumb.app{padding:20px}
+.course-hero .iconwrap{position:relative;padding-bottom:22px}
+.course-hero .iconwrap::after{content:"";position:absolute;left:14%;right:14%;bottom:0;height:14px;border-radius:50%;background:radial-gradient(closest-side,rgba(15,23,42,.28),transparent);animation:shadowSlow 8s ease-in-out infinite}
+@keyframes bobSlow{50%{transform:translateY(-8px)}}
+@keyframes shadowSlow{50%{transform:scale(.82);opacity:.7}}
+@media (max-width:640px){.course-hero .cthumb{width:84px;height:84px;border-radius:22px}.course-hero .cthumb.app{padding:13px}.course-hero .iconwrap{padding-bottom:14px}}
+
+/* ---------- Sign in / Join: orbit of course icons ---------- */
+.orbit{position:relative;height:280px;perspective:1000px}
+.orbit .tilt{position:absolute;left:50%;top:50%;transform-style:preserve-3d;transform:rotateX(-12deg)}
+.orbit .spin{transform-style:preserve-3d;animation:orbit 28s linear infinite}
+.orbit .it{position:absolute;left:-38px;top:-38px;width:76px;height:76px;transform:rotateY(calc(var(--i) * 60deg)) translateZ(165px)}
+.orbit .it .cthumb{width:76px;height:76px;border-radius:20px;border-color:rgba(255,255,255,.4)}
+.orbit .core{position:absolute;left:-46px;top:-46px;width:92px;height:92px;border-radius:26px;background:#fff;padding:14px;box-shadow:0 30px 60px -20px rgba(0,0,20,.6)}
+.orbit .core img{width:100%;height:100%;object-fit:contain}
+@keyframes orbit{to{transform:rotateY(360deg)}}
+
+/* ---------- Smooth page changes (View Transitions) ---------- */
+#apphead{view-transition-name:apphead}
+#bottomnav{view-transition-name:bnav}
+::view-transition-group(apphead),::view-transition-group(bnav),::view-transition-group(bgart){animation:none}
+::view-transition-old(root){animation:vtOut .2s ease both}
+::view-transition-new(root){animation:vtIn .45s var(--ease-out) both}
+::view-transition-group(hero-icon){animation-duration:.55s;animation-timing-function:var(--ease-out)}
+@keyframes vtOut{to{opacity:0;transform:scale(.988)}}
+@keyframes vtIn{from{opacity:0;transform:translateY(14px)}}
+
+/* ---------- Accessibility: calmer equivalents ---------- */
+@media (prefers-reduced-motion:reduce){
+  .bg-art .orb,.scene .ring,.tile3d,.scene .spark,.orbit .spin,.course-hero .cthumb,.course-hero .iconwrap::after{animation:none}
+  .split .sw{animation-name:fadeOnly;filter:none}
+  .stagger .cgrid>*,.stagger .clist>*,.stagger .lessons>li,.stagger .table>.trow,.stagger .results>*,.lead-in{animation-name:fadeOnly}
+  .ccard,.ccard:hover{transform:none!important}
+  .cover .appicon,.cover .ghost{transform:none}
+  ::view-transition-old(root),::view-transition-new(root){animation:none}
+}
+@media (prefers-reduced-transparency:reduce){
+  .dstat,.tile3d{backdrop-filter:none;-webkit-backdrop-filter:none;background:var(--surface)}
+}

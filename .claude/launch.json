@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "lms-staging",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["server.js", "--env", "staging"],
+      "port": 5520
+    }
+  ]
+}

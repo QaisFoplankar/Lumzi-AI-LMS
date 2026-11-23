@@ -1,0 +1,114 @@
+/* Lumzi LMS student site: feature rows (from the brief's video) and motion.
+   Motion only runs when JS adds .mo to <html>, which it skips for prefers-reduced-motion. */
+
+/* ===================================================================
+   Feature rows (certificates, learning path)
+   =================================================================== */
+.feat{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,80px);align-items:center;margin-top:clamp(64px,9vw,112px)}
+.feat-t h2{font-size:clamp(26px,3.2vw,38px);font-weight:800;letter-spacing:-.03em;line-height:1.12}
+.feat-t>p{color:var(--muted);font-size:17px;margin-top:14px;max-width:52ch}
+.feat-t>.feat-n{font-size:15px;color:var(--ink-2)}
+.feat-t .btn{margin-top:22px}
+.feat-l{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:10px;color:var(--ink-2)}
+.feat-l li{display:flex;gap:10px;align-items:flex-start}
+.feat-l svg{color:var(--ok);flex:none;margin-top:3px}
+.feat-v{min-width:0;display:grid;place-items:center;overflow-x:clip;padding-block:28px}
+@media (max-width:860px){.feat{grid-template-columns:1fr}.feat.flip .feat-v{order:2}}
+
+/* Fan deck of certificates (after 21st.dev Fan Deck Card) */
+.fd{position:relative;width:100%;max-width:560px;display:grid;justify-items:center;gap:18px;outline:none;border-radius:var(--r-lg);padding:8px 0}
+.fd:focus-visible{outline:2px solid var(--brand);outline-offset:6px}
+.fd-hand{position:relative;width:272px;height:318px;touch-action:pan-y}
+.fd-card{position:absolute;inset:0;display:flex;flex-direction:column;gap:6px;text-align:left;padding:18px 20px 20px;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-top:6px solid var(--tint);border-radius:16px;box-shadow:var(--sh);cursor:pointer;
+  transform:translate(var(--rx,0),var(--ry,0)) rotate(var(--rr,0deg));transition:transform 450ms var(--ease-out),box-shadow 200ms ease}
+.fd.open .fd-card{transform:translate(var(--fx,0),var(--fy,0)) rotate(var(--fr,0deg))}
+@media (hover:hover) and (pointer:fine){.fd.open .fd-card:hover{transform:translate(var(--fx,0),calc(var(--fy,0) - 14px)) rotate(var(--fr,0deg));box-shadow:var(--sh-lg)}}
+.fd .fd-card.lift{transform:translate(var(--fx,0),calc(var(--fy,0) - 72px)) rotate(0deg);box-shadow:var(--sh-lg)}
+.fd-top{display:flex;align-items:center;gap:8px;font-size:18px;letter-spacing:-.04em;margin-bottom:auto}
+.fd-top img{border-radius:6px}
+.fd-seal{margin-left:auto;width:38px;height:38px;border-radius:50%;background:#FCD34D;color:#422006;display:grid;place-items:center}
+.fd-card small{color:var(--faint);font-size:13px;font-weight:600}
+.fd-card strong{font-size:22px;line-height:1.2;letter-spacing:-.02em}
+.fd-meta{color:var(--muted);font-size:14px}
+.fd-line{display:block;width:58%;height:1px;background:var(--line-2);margin-top:18px}
+.fd-ctl{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:14px;font-weight:600;min-height:36px;margin-top:10px;text-align:center}
+@media (max-width:560px){.fd-hand{width:236px;height:290px}.fd-card strong{font-size:19px}}
+
+/* Learning path preview */
+.lp{position:relative;width:min(100%,520px);display:grid;grid-template-columns:170px minmax(0,1fr);gap:16px;padding:16px;background:var(--bg);border:1px solid var(--line);border-radius:18px;box-shadow:var(--sh-lg)}
+.lp-side{background:var(--soft);border-radius:12px;padding:14px 10px}
+.lp-side b{display:block;font-size:14px;padding:0 6px 8px}
+.lp-side ul{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.lp-side li{font-size:13.5px;color:var(--muted);padding:7px 8px;border-radius:8px}
+.lp-side li.on{background:var(--brand-50);color:var(--brand);font-weight:600}
+.lp-main{display:grid;gap:10px;align-content:start;padding:6px 2px}
+.lp-crumb{font-size:13px;color:var(--faint)}
+.lp-next{font-weight:700;font-size:18px}
+.lp-bar{height:8px;border-radius:99px;background:var(--line);overflow:hidden}
+.lp-bar i{display:block;height:100%;width:62%;background:var(--brand);border-radius:inherit;transform-origin:left}
+.lp-tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px}
+.lp-tile{border:1px solid var(--line);border-radius:12px;padding:12px;display:grid;gap:2px}
+.lp-tile svg{color:var(--brand)}
+.lp-tile b{font-size:22px;font-variant-numeric:tabular-nums}
+.lp-tile small{color:var(--muted);font-size:13px}
+.lp-chip{position:absolute;top:-24px;right:-14px;display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--bg);border:1px solid var(--line);border-radius:14px;box-shadow:var(--sh-lg);color:var(--ok)}
+.lp-chip b{display:block;color:var(--ink);font-size:14px}
+.lp-chip small{color:var(--muted);font-size:12.5px}
+@media (max-width:480px){.lp{grid-template-columns:1fr}.lp-side{display:none}.lp-chip{right:-4px}}
+
+/* ===================================================================
+   Motion. One page-load sequence in the hero; everything else
+   reveals once as it scrolls into view.
+   =================================================================== */
+:root{--ease-out:cubic-bezier(.23,1,.32,1);--ease-in-out:cubic-bezier(.77,0,.175,1)}
+@keyframes word{from{opacity:0;transform:translateY(10px);filter:blur(8px)}to{opacity:1;transform:none;filter:blur(0)}}
+/* explicit end frames: the hidden start state is set in CSS, so "to" can't be left implicit */
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes settle{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:none}}
+@keyframes grow{from{transform:scaleX(0)}to{transform:none}}
+@keyframes pop{from{opacity:0;transform:translateY(8px) scale(.96)}to{opacity:1;transform:none}}
+@keyframes float{50%{transform:translateY(-10px)}}
+
+/* headlines, word by word (after 21st.dev Words Stagger) */
+.w{display:inline-block}
+.mo .w{opacity:0}
+.mo .is-in .w,.mo [data-words].is-in .w{animation:word 560ms var(--ease-out) both;animation-delay:calc(var(--i) * 60ms)}
+
+/* hero: words, then the copy, then the picture collage settles */
+.mo .hero .hero-sub,.mo .hero .hero-cta,.mo .hero .hero-pts,.mo .hero .ha,.mo .hero .ha-dot{opacity:0}
+.mo .hero.is-in .hero-sub{animation:rise 600ms var(--ease-out) 420ms both}
+.mo .hero.is-in .hero-cta{animation:rise 600ms var(--ease-out) 520ms both}
+.mo .hero.is-in .hero-pts{animation:rise 600ms var(--ease-out) 620ms both}
+.mo .hero.is-in .ha1{animation:settle 800ms var(--ease-out) 180ms both}
+.mo .hero.is-in .ha2{animation:settle 800ms var(--ease-out) 320ms both}
+.mo .hero.is-in .ha3{animation:settle 800ms var(--ease-out) 460ms both}
+.mo .hero.is-in .ha-dot{animation:settle 600ms var(--ease-out) 700ms both,float 6s ease-in-out 1.4s infinite}
+.mo .welcome p{opacity:0}
+.mo .welcome.is-in p{animation:rise 500ms var(--ease-out) 260ms both}
+
+/* scroll reveals, once */
+.mo .rv:not(.is-in){opacity:0}
+/* backwards fill: hidden during the delay, released afterwards so hover transforms still work */
+.mo .rv.is-in{animation:rise 700ms var(--ease-out) backwards}
+.mo .grid:not(.is-in)>*{opacity:0}
+.mo .grid.is-in>*{animation:rise 560ms var(--ease-out) backwards}
+.mo .grid.is-in>:nth-child(2){animation-delay:60ms}
+.mo .grid.is-in>:nth-child(3){animation-delay:110ms}
+.mo .grid.is-in>:nth-child(4){animation-delay:150ms}
+.mo .grid.is-in>:nth-child(5){animation-delay:185ms}
+.mo .grid.is-in>:nth-child(6){animation-delay:215ms}
+.mo .grid.is-in>:nth-child(n+7){animation-delay:240ms}
+
+/* inside a feature row: the visual settles, then its details arrive */
+.mo .feat.is-in .feat-v{animation:settle 800ms var(--ease-out) 120ms both}
+.mo .feat.is-in .feat-l li{animation:rise 500ms var(--ease-out) both}
+.mo .feat.is-in .feat-l li:nth-child(1){animation-delay:380ms}
+.mo .feat.is-in .feat-l li:nth-child(2){animation-delay:440ms}
+.mo .feat.is-in .feat-l li:nth-child(3){animation-delay:500ms}
+.mo .feat.is-in .lp-bar i{animation:grow 900ms var(--ease-out) 500ms both}
+.mo .feat.is-in .lp-tile{animation:pop 500ms var(--ease-out) both}
+.mo .feat.is-in .lp-tile:nth-child(1){animation-delay:520ms}
+.mo .feat.is-in .lp-tile:nth-child(2){animation-delay:580ms}
+.mo .feat.is-in .lp-tile:nth-child(3){animation-delay:630ms}
+.mo .feat.is-in .lp-tile:nth-child(4){animation-delay:670ms}
+.mo .feat.is-in .lp-chip{animation:pop 520ms var(--ease-out) 900ms both}

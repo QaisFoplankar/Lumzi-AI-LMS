@@ -1,0 +1,874 @@
+{
+ "courses": [
+  {
+   "id": "msbasic",
+   "title": "MICROSOFT BASIC",
+   "description": "Learn the fundamentals of Microsoft Office, including MS Word, Excel, PowerPoint, and Windows basics. This course helps beginners develop essential computer skills for education, office work, and daily productivity",
+   "status": "published",
+   "abbr": "MB",
+   "color": "#0D6B57",
+   "subject": "Computer Science",
+   "level": "Beginner",
+   "is_new": false,
+   "sort_order": 0,
+   "lessons": [
+    "Windows basics",
+    "MS Word essentials",
+    "Excel fundamentals",
+    "PowerPoint presentations",
+    "Everyday productivity"
+   ]
+  },
+  {
+   "id": "tally",
+   "title": "TALLY PRIME",
+   "description": "Learn Tally course basics and master accounting, GST, inventory, and financial management skills with practical training.",
+   "status": "published",
+   "abbr": "TP",
+   "color": "#2D5BD6",
+   "subject": "Business",
+   "level": "Beginner",
+   "is_new": false,
+   "sort_order": 1,
+   "lessons": [
+    "Introduction to Tally Prime 3.0",
+    "Creating and managing company data",
+    "Basic accounting concepts: ledger, groups, vouchers and entries",
+    "Creating and managing ledgers and groups",
+    "Sales and purchase entries",
+    "Cash and bank voucher entries",
+    "Receipt and payment vouchers",
+    "Journal and contra vouchers",
+    "GST basics and invoice entry in Tally",
+    "Sales and purchase invoices with GST",
+    "Stock and inventory management",
+    "Day-to-day accounting practices",
+    "Trial balance, balance sheet and profit & loss account",
+    "Key reports: day book, cash/bank book and ledger statement",
+    "Basic financial statements and final accounts"
+   ]
+  },
+  {
+   "id": "msoffice",
+   "title": "MS OFFICE",
+   "description": "Learn Microsoft Word, Excel and PowerPoint step by step: create documents, simple spreadsheets and presentations for school, office and everyday use. Made for beginners, no previous experience needed.",
+   "status": "published",
+   "abbr": "MO",
+   "color": "#7B2D8B",
+   "subject": "Computer Science",
+   "level": "Beginner",
+   "is_new": false,
+   "sort_order": 2,
+   "lessons": [
+    "Microsoft Word: open and save a document",
+    "Typing, deleting and editing text",
+    "Changing font, size, colour and alignment",
+    "Bullets, numbering and simple tables",
+    "Page setup, headers/footers and printing",
+    "Letters, applications, assignments and notes",
+    "Microsoft Excel: entering and editing data in cells",
+    "Simple formulas: SUM, AVERAGE and COUNT",
+    "Formatting numbers, dates and text",
+    "Sorting and filtering simple lists",
+    "Microsoft PowerPoint: creating a presentation and adding slides",
+    "Simple animations and slide transitions",
+    "Presenting and saving your slide show"
+   ]
+  },
+  {
+   "id": "ai",
+   "title": "ARTIFICIAL INTELLIGENCE",
+   "description": "Learn the basics of Artificial Intelligence in simple steps: how AI and LLMs work, which AI tools to use, and how to write good prompts. Test yourself with a level-wise quiz and get instant results.",
+   "status": "published",
+   "abbr": "AI",
+   "color": "#0E5A93",
+   "subject": "AI",
+   "level": "Beginner",
+   "is_new": true,
+   "sort_order": 3,
+   "lessons": [
+    "How AI works",
+    "How LLMs work",
+    "Choosing the right AI tools",
+    "Writing good prompts",
+    "Level-wise quiz"
+   ]
+  },
+  {
+   "id": "excel",
+   "title": "Advanced Excel",
+   "description": "Go beyond basic formulas: lookups, logical and statistical functions, data cleaning, PivotTables, dashboards and macros, practised on real-world data.",
+   "status": "draft",
+   "abbr": "AE",
+   "color": "#9A5B00",
+   "subject": "Data Science",
+   "level": "Intermediate",
+   "is_new": false,
+   "sort_order": 4,
+   "lessons": [
+    "Quick review of basic Excel skills",
+    "Lookup functions: VLOOKUP, HLOOKUP and XLOOKUP",
+    "Logical functions: IF, IFS, AND, OR, NOT",
+    "Statistical functions: SUMIFS, COUNTIFS, AVERAGEIFS",
+    "Text functions: CONCAT, TEXT, LEFT, RIGHT, MID",
+    "Data cleaning: filtering, sorting and conditional formatting",
+    "Removing duplicates, error checking and data validation",
+    "PivotTables and PivotCharts",
+    "Dynamic reports and dashboards",
+    "Advanced charts and visualizations",
+    "What-if analysis: Goal Seek and Data Tables",
+    "Macros and automation basics"
+   ]
+  },
+  {
+   "id": "aif",
+   "title": "AI Foundation course",
+   "description": "The first level of the Lumzi AI Academy, for beginners with no coding background: how AI works, how to prompt it well, and how to use free AI tools for office work, content, marketing and simple automation.",
+   "status": "draft",
+   "abbr": "AF",
+   "color": "#A0153E",
+   "subject": "AI",
+   "level": "Beginner",
+   "is_new": false,
+   "sort_order": 5,
+   "lessons": [
+    "AI Foundations",
+    "Prompting & Office Tools",
+    "Content & Marketing",
+    "Creative AI Studio",
+    "No-Code App Building",
+    "Agents & Automation"
+   ]
+  }
+ ],
+ "partnerCourses": [
+  {
+   "id": "introduction-to-computer-science",
+   "title": "Introduction to Computer Science",
+   "description": "A introductory course in Computer Science from Northfield University. Self-paced, with a verified certificate when you finish.",
+   "status": "published",
+   "abbr": "Ni",
+   "color": "#2D5BD6",
+   "subject": "Computer Science",
+   "level": "Introductory",
+   "is_new": false,
+   "sort_order": 1000,
+   "org": "Northfield University",
+   "kind": "Course",
+   "duration": "12 hafte",
+   "meta": {
+    "n": 0,
+    "tr": 1
+   },
+   "lessons": [
+    "Course introduction",
+    "Key concepts",
+    "Guided practice",
+    "Applied project",
+    "Final assessment"
+   ]
+  },
+  {
+   "id": "data-analyst-professional-certificate",
+   "title": "Data Analyst Professional Certificate",
+   "description": "A intermediate certificate program in Data Science from Datawise Academy. Self-paced, with a verified certificate when you finish.",
+   "status": "published",
+   "abbr": "De",
+   "color": "#0D6B57",
+   "subject": "Data Science",
+   "level": "Intermediate",
+   "is_new": false,
+   "sort_order": 1001,
+   "org": "Datawise Academy",
+   "kind": "Certificate",
+   "duration": "4 mahine",
+   "meta": {
+    "n": 3,
+    "tr": 1
+   },
+   "lessons": [
+    "Course introduction",
+    "Key concepts",
+    "Guided practice",
+    "Applied project",
+    "Final assessment"
+   ]
+  },
+  {
+   "id": "generative-ai-for-everyone",
+   "title": "Generative AI for Everyone",
+   "description": "A introductory certificate program in AI from Cortex Labs. Self-paced, with a verified certificate when you finish.",
+   "status": "published",
+   "abbr": "C",
+   "color": "#7B2D8B",
+   "subject": "AI",
+   "level": "Introductory",
+   "is_new": true,
+   "sort_order": 1002,
+   "org": "Cortex Labs",
+   "kind": "Certificate",
+   "duration": "6 hafte",
+   "meta": {
+    "n": 4,
+    "tr": 1
+   },
+   "lessons": [
+    "Course introduction",
+    "Key concepts",
+    "Guided practice",
+    "Applied project",
+    "Final assessment"
+   ]
+  },
+  {
+   "id": "algorithms-graphs-and-dynamic-programming",
+   "title": "Algorithms: Graphs & Dynamic Programming",
+   "description": "A advanced course in Computer Science from Lakeside Institute of Technology. Self-paced, with a verified certificate when you finish.",
+   "status": "published",
+   "abbr": "Lit",
+   "color": "#0E5A93",
+   "subject": "Computer Science",
+   "level": "Advanced",
+   "is_new": false,
+   "sort_order": 1003,
+   "org": "Lakeside Institute of Technology",
+   "kind": "Course",
+   "duration": "5 hafte",
+   "meta": {
+    "n": 0,
+    "tr": 1
+   },
+   "lessons": [
+    "Course introduction",
+    "Key concepts",
+    "Guided practice",
+    "Applied project",
+    "Final assessment"
+   ]
+  },
+  {
+   "id": "leadership-fundamentals",
+   "title": "Leadership Fundamentals",
+   "description": "A introductory course in Business from Westbridge School of Management. Self-paced, with a verified certificate when you finish.",
+   "status": "published",
+   "abbr": "Wt",
+   "color": "#A0153E",
+   "subject": "Business",
+   "level": "Introductory",
+   "is_new": false,
+   "sort_order": 1004,
+   "org": "Westbridge School of Management",
+   "kind": "Course",
+   "duration": "4 hafte",
+   "meta": {
+    "n": 0,
+    "tr": 1
+   },
+   "lessons": [
+    "Course introduction",
+    "Key concepts",
+    "Guided practice",
+    "Applied project",
+    "Final assessment"
+   ]
+  },
+  {
+   "id": "ai-engineer-program",
+   "title": "AI Engineer Program",
+   "description": "A intermediate certificate program in AI from Cortex Labs. Self-paced, with a verified certificate when you finish.",
+   "status": "published",
+   "abbr": "C",
+   "color": "#7B2D8B",
+   "subject": "AI",
+   "level": "Intermediate",
+   "is_new": true,
+   "sort_order": 1005,
+   "org": "Cortex Labs",
+   "kind": "Certificate",
+   "duration": "6 hafte",
+   "meta": {
+    "n": 3,
+    "tr": 0
+   },
+   "lessons": [
+    "Course introduction",
+    "Key concepts",
+    "Guided practice",
+    "Applied project",
+    "Final assessment"
+   ]
+  },
+  {
+   "id": "machine-learning-with-python",
+   "title": "Machine Learning with Python",
+   "description": "A intermediate course in AI from Datawise Academy. Self-paced, with a verified certificate when you finish.",
+   "status": "published",
+   "abbr": "De",
+   "color": "#0D6B57",
+   "subject": "AI",
+   "level": "Intermediate",
+   "is_new": false,
+   "sort_order": 1006,
+   "org": "Datawise Academy",
+   "kind": "Course",
+   "duration": "6 hafte",
+   "meta": {
+    "n": 0,
+    "tr": 1
+   },
+   "lessons": [
+    "Course introduction",
+    "Key concepts",
+    "Guided practice",
+    "Applied project",
+    "Final assessment"
+   ]
+  },
+  {
+   "id": "start-programming-with-python",
+   "title": "Start Programming with Python",
+   "description": "A introductory course in Computer Science from CodeCraft. Self-paced, with a verified certificate when you finish.",
+   "status": "published",
+   "abbr": "C",
+   "color": "#46561A",
+   "subject": "Computer Science",
+   "level": "Introductory",
+   "is_new": true,
+   "sort_order": 1007,
+   "org": "CodeCraft",
+   "kind": "Course",
+   "duration": "1 hafta",
+   "meta": {
+    "n": 0,
+    "tr": 0
+   },
+   "lessons": [
+    "Course introduction",
+    "Key concepts",
+    "Guided practice",
+    "Applied project",
+    "Final assessment"
+   ]
+  },
+  {
+   "id": "c-programming-for-beginners",
+   "title": "C++ Programming for Beginners",
+   "description": "A introductory course in Computer Science from CodeCraft. Self-paced, with a verified certificate when you finish.",
+   "status": "published",
+   "abbr": "C",
+   "color": "#46561A",
+   "subject": "Computer Science",
+   "level": "Introductory",
+   "is_new": true,
+   "sort_order": 1008,
+   "org": "CodeCraft",
+   "kind": "Course",
+   "duration": "3 hafte",
+   "meta": {
+    "n": 0,
+    "tr": 0
+   },
+   "lessons": [
+    "Course introduction",
+    "Key concepts",
+    "Guided practice",
+    "Applied project",
+    "Final assessment"
+   ]
+  },
+  {
+   "id": "ai-product-manager",
+   "title": "AI Product Manager",
+   "description": "A intermediate certificate program in AI from Cortex Labs. Self-paced, with a verified certificate when you finish.",
+   "status": "published",
+   "abbr": "C",
+   "color": "#7B2D8B",
+   "subject": "AI",
+   "level": "Intermediate",
+   "is_new": true,
+   "sort_order": 1009,
+   "org": "Cortex Labs",
+   "kind": "Certificate",
+   "duration": "10 mahine",
+   "meta": {
+    "n": 10,
+    "tr": 0
+   },
+   "lessons": [
+    "Course introduction",
+    "Key concepts",
+    "Guided practice",
+    "Applied project",
+    "Final assessment"
+   ]
+  },
+  {
+   "id": "behavioral-economics-and-game-theory",
+   "title": "Behavioral Economics & Game Theory",
+   "description": "A introductory course in Business from Northfield University. Self-paced, with a verified certificate when you finish.",
+   "status": "published",
+   "abbr": "Ni",
+   "color": "#2D5BD6",
+   "subject": "Business",
+   "level": "Introductory",
+   "is_new": true,
+   "sort_order": 1010,
+   "org": "Northfield University",
+   "kind": "Course",
+   "duration": "1 hafta",
+   "meta": {
+    "n": 0,
+    "tr": 0
+   },
+   "lessons": [
+    "Course introduction",
+    "Key concepts",
+    "Guided practice",
+    "Applied project",
+    "Final assessment"
+   ]
+  },
+  {
+   "id": "cloud-data-engineering",
+   "title": "Cloud Data Engineering",
+   "description": "A advanced certificate program in Data Science from Skyline Cloud. Self-paced, with a verified certificate when you finish.",
+   "status": "published",
+   "abbr": "S",
+   "color": "#9A5B00",
+   "subject": "Data Science",
+   "level": "Advanced",
+   "is_new": true,
+   "sort_order": 1011,
+   "org": "Skyline Cloud",
+   "kind": "Certificate",
+   "duration": "3 hafte",
+   "meta": {
+    "n": 3,
+    "tr": 0
+   },
+   "lessons": [
+    "Course introduction",
+    "Key concepts",
+    "Guided practice",
+    "Applied project",
+    "Final assessment"
+   ]
+  },
+  {
+   "id": "healthcare-leadership",
+   "title": "Healthcare Leadership",
+   "description": "A executive executive education program in Healthcare from Riverside Medical College. Self-paced, with a verified certificate when you finish.",
+   "status": "published",
+   "abbr": "Ri",
+   "color": "#1F2B5E",
+   "subject": "Healthcare",
+   "level": "Executive",
+   "is_new": false,
+   "sort_order": 1012,
+   "org": "Riverside Medical College",
+   "kind": "Executive Ed",
+   "duration": "6 hafte",
+   "meta": {
+    "n": 0,
+    "tr": 1
+   },
+   "lessons": [
+    "Course introduction",
+    "Key concepts",
+    "Guided practice",
+    "Applied project",
+    "Final assessment"
+   ]
+  },
+  {
+   "id": "ai-strategy-for-business-leaders",
+   "title": "AI Strategy for Business Leaders",
+   "description": "A executive executive education program in AI from Westbridge School of Management. Self-paced, with a verified certificate when you finish.",
+   "status": "published",
+   "abbr": "Wt",
+   "color": "#A0153E",
+   "subject": "AI",
+   "level": "Executive",
+   "is_new": false,
+   "sort_order": 1013,
+   "org": "Westbridge School of Management",
+   "kind": "Executive Ed",
+   "duration": "6 hafte",
+   "meta": {
+    "n": 0,
+    "tr": 1
+   },
+   "lessons": [
+    "Course introduction",
+    "Key concepts",
+    "Guided practice",
+    "Applied project",
+    "Final assessment"
+   ]
+  },
+  {
+   "id": "mergers-and-acquisitions-law-and-economics",
+   "title": "Mergers & Acquisitions: Law and Economics",
+   "description": "A executive executive education program in Business from Capital School of Economics. Self-paced, with a verified certificate when you finish.",
+   "status": "published",
+   "abbr": "C",
+   "color": "#5B3FD1",
+   "subject": "Business",
+   "level": "Executive",
+   "is_new": false,
+   "sort_order": 1014,
+   "org": "Capital School of Economics",
+   "kind": "Executive Ed",
+   "duration": "6 hafte",
+   "meta": {
+    "n": 0,
+    "tr": 1
+   },
+   "lessons": [
+    "Course introduction",
+    "Key concepts",
+    "Guided practice",
+    "Applied project",
+    "Final assessment"
+   ]
+  },
+  {
+   "id": "sustainable-finance",
+   "title": "Sustainable Finance",
+   "description": "A executive executive education program in Business from Greenleaf Institute. Self-paced, with a verified certificate when you finish.",
+   "status": "published",
+   "abbr": "Gt",
+   "color": "#00756F",
+   "subject": "Business",
+   "level": "Executive",
+   "is_new": false,
+   "sort_order": 1015,
+   "org": "Greenleaf Institute",
+   "kind": "Executive Ed",
+   "duration": "8 hafte",
+   "meta": {
+    "n": 0,
+    "tr": 1
+   },
+   "lessons": [
+    "Course introduction",
+    "Key concepts",
+    "Guided practice",
+    "Applied project",
+    "Final assessment"
+   ]
+  },
+  {
+   "id": "mba-essentials",
+   "title": "MBA Essentials",
+   "description": "A executive executive education program in Business from Capital School of Economics. Self-paced, with a verified certificate when you finish.",
+   "status": "published",
+   "abbr": "C",
+   "color": "#5B3FD1",
+   "subject": "Business",
+   "level": "Executive",
+   "is_new": false,
+   "sort_order": 1016,
+   "org": "Capital School of Economics",
+   "kind": "Executive Ed",
+   "duration": "3 mahine",
+   "meta": {
+    "n": 0,
+    "tr": 0
+   },
+   "lessons": [
+    "Course introduction",
+    "Key concepts",
+    "Guided practice",
+    "Applied project",
+    "Final assessment"
+   ]
+  },
+  {
+   "id": "master-of-science-in-data-science",
+   "title": "Master of Science in Data Science",
+   "description": "A master's online degree in Data Science from Maplewood University. Self-paced, with a verified certificate when you finish.",
+   "status": "published",
+   "abbr": "Mi",
+   "color": "#8A3A12",
+   "subject": "Data Science",
+   "level": "Master's",
+   "is_new": false,
+   "sort_order": 1017,
+   "org": "Maplewood University",
+   "kind": "Degree",
+   "duration": "2 saal",
+   "meta": {
+    "n": 0,
+    "tr": 1
+   },
+   "lessons": [
+    "Orientation",
+    "Core modules",
+    "Electives",
+    "Capstone project",
+    "Final review"
+   ]
+  },
+  {
+   "id": "master-of-business-administration",
+   "title": "Master of Business Administration",
+   "description": "A master's online degree in Business from Maplewood University. Self-paced, with a verified certificate when you finish.",
+   "status": "published",
+   "abbr": "Mi",
+   "color": "#8A3A12",
+   "subject": "Business",
+   "level": "Master's",
+   "is_new": false,
+   "sort_order": 1018,
+   "org": "Maplewood University",
+   "kind": "Degree",
+   "duration": "2 saal",
+   "meta": {
+    "n": 0,
+    "tr": 1
+   },
+   "lessons": [
+    "Orientation",
+    "Core modules",
+    "Electives",
+    "Capstone project",
+    "Final review"
+   ]
+  },
+  {
+   "id": "bsc-in-computer-science",
+   "title": "BSc in Computer Science",
+   "description": "A bachelor's online degree in Computer Science from Lakeside Institute of Technology. Self-paced, with a verified certificate when you finish.",
+   "status": "published",
+   "abbr": "Lit",
+   "color": "#0E5A93",
+   "subject": "Computer Science",
+   "level": "Bachelor's",
+   "is_new": false,
+   "sort_order": 1019,
+   "org": "Lakeside Institute of Technology",
+   "kind": "Degree",
+   "duration": "3 saal",
+   "meta": {
+    "n": 0,
+    "tr": 1
+   },
+   "lessons": [
+    "Orientation",
+    "Core modules",
+    "Electives",
+    "Capstone project",
+    "Final review"
+   ]
+  },
+  {
+   "id": "master-of-science-in-cybersecurity",
+   "title": "Master of Science in Cybersecurity",
+   "description": "A master's online degree in Computer Science from Maplewood University. Self-paced, with a verified certificate when you finish.",
+   "status": "published",
+   "abbr": "Mi",
+   "color": "#8A3A12",
+   "subject": "Computer Science",
+   "level": "Master's",
+   "is_new": false,
+   "sort_order": 1020,
+   "org": "Maplewood University",
+   "kind": "Degree",
+   "duration": "2 saal",
+   "meta": {
+    "n": 0,
+    "tr": 1
+   },
+   "lessons": [
+    "Orientation",
+    "Core modules",
+    "Electives",
+    "Capstone project",
+    "Final review"
+   ]
+  },
+  {
+   "id": "introduction-to-neuroscience",
+   "title": "Introduction to Neuroscience",
+   "description": "A introductory certificate program in Healthcare from Riverside Medical College. Self-paced, with a verified certificate when you finish.",
+   "status": "published",
+   "abbr": "Ri",
+   "color": "#1F2B5E",
+   "subject": "Healthcare",
+   "level": "Introductory",
+   "is_new": false,
+   "sort_order": 1021,
+   "org": "Riverside Medical College",
+   "kind": "Certificate",
+   "duration": "5 mahine",
+   "meta": {
+    "n": 4,
+    "tr": 0
+   },
+   "lessons": [
+    "Course introduction",
+    "Key concepts",
+    "Guided practice",
+    "Applied project",
+    "Final assessment"
+   ]
+  },
+  {
+   "id": "biology-the-secret-of-life",
+   "title": "Biology: The Secret of Life",
+   "description": "A introductory course in Healthcare from Northfield University. Self-paced, with a verified certificate when you finish.",
+   "status": "published",
+   "abbr": "Ni",
+   "color": "#2D5BD6",
+   "subject": "Healthcare",
+   "level": "Introductory",
+   "is_new": false,
+   "sort_order": 1022,
+   "org": "Northfield University",
+   "kind": "Course",
+   "duration": "4 mahine",
+   "meta": {
+    "n": 0,
+    "tr": 0
+   },
+   "lessons": [
+    "Course introduction",
+    "Key concepts",
+    "Guided practice",
+    "Applied project",
+    "Final assessment"
+   ]
+  },
+  {
+   "id": "python-for-data-science",
+   "title": "Python for Data Science",
+   "description": "A advanced course in Data Science from Datawise Academy. Self-paced, with a verified certificate when you finish.",
+   "status": "published",
+   "abbr": "De",
+   "color": "#0D6B57",
+   "subject": "Data Science",
+   "level": "Advanced",
+   "is_new": false,
+   "sort_order": 1023,
+   "org": "Datawise Academy",
+   "kind": "Course",
+   "duration": "3 mahine",
+   "meta": {
+    "n": 0,
+    "tr": 0
+   },
+   "lessons": [
+    "Course introduction",
+    "Key concepts",
+    "Guided practice",
+    "Applied project",
+    "Final assessment"
+   ]
+  },
+  {
+   "id": "r-programming-basics",
+   "title": "R Programming Basics",
+   "description": "A introductory course in Data Science from Northfield University. Self-paced, with a verified certificate when you finish.",
+   "status": "published",
+   "abbr": "Ni",
+   "color": "#2D5BD6",
+   "subject": "Data Science",
+   "level": "Introductory",
+   "is_new": false,
+   "sort_order": 1024,
+   "org": "Northfield University",
+   "kind": "Course",
+   "duration": "8 hafte",
+   "meta": {
+    "n": 0,
+    "tr": 0
+   },
+   "lessons": [
+    "Course introduction",
+    "Key concepts",
+    "Guided practice",
+    "Applied project",
+    "Final assessment"
+   ]
+  },
+  {
+   "id": "data-analytics-for-business",
+   "title": "Data Analytics for Business",
+   "description": "A advanced course in Business from Lakeside Institute of Technology. Self-paced, with a verified certificate when you finish.",
+   "status": "published",
+   "abbr": "Lit",
+   "color": "#0E5A93",
+   "subject": "Business",
+   "level": "Advanced",
+   "is_new": false,
+   "sort_order": 1025,
+   "org": "Lakeside Institute of Technology",
+   "kind": "Course",
+   "duration": "4 mahine",
+   "meta": {
+    "n": 0,
+    "tr": 0
+   },
+   "lessons": [
+    "Course introduction",
+    "Key concepts",
+    "Guided practice",
+    "Applied project",
+    "Final assessment"
+   ]
+  },
+  {
+   "id": "public-health-foundations",
+   "title": "Public Health Foundations",
+   "description": "A introductory course in Healthcare from Riverside Medical College. Self-paced, with a verified certificate when you finish.",
+   "status": "published",
+   "abbr": "Ri",
+   "color": "#1F2B5E",
+   "subject": "Healthcare",
+   "level": "Introductory",
+   "is_new": false,
+   "sort_order": 1026,
+   "org": "Riverside Medical College",
+   "kind": "Course",
+   "duration": "6 hafte",
+   "meta": {
+    "n": 0,
+    "tr": 0
+   },
+   "lessons": [
+    "Course introduction",
+    "Key concepts",
+    "Guided practice",
+    "Applied project",
+    "Final assessment"
+   ]
+  },
+  {
+   "id": "prompt-engineering-in-practice",
+   "title": "Prompt Engineering in Practice",
+   "description": "A intermediate course in AI from Cortex Labs. Self-paced, with a verified certificate when you finish.",
+   "status": "published",
+   "abbr": "C",
+   "color": "#7B2D8B",
+   "subject": "AI",
+   "level": "Intermediate",
+   "is_new": true,
+   "sort_order": 1027,
+   "org": "Cortex Labs",
+   "kind": "Course",
+   "duration": "2 hafte",
+   "meta": {
+    "n": 0,
+    "tr": 0
+   },
+   "lessons": [
+    "Course introduction",
+    "Key concepts",
+    "Guided practice",
+    "Applied project",
+    "Final assessment"
+   ]
+  }
+ ]
+}

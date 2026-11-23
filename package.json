@@ -1,0 +1,23 @@
+{
+  "name": "lumzi-lms",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Lumzi LMS, local staging build with Postgres",
+  "scripts": {
+    "start": "node server.js --env staging",
+    "staging": "node server.js --env staging",
+    "db:migrate": "node db/cli.js migrate",
+    "db:seed": "node db/cli.js seed",
+    "db:reset": "node db/cli.js reset",
+    "db:set-password": "node db/cli.js set-password",
+    "build:standalone": "node scripts/build-standalone.mjs"
+  },
+  "engines": {
+    "node": ">=20.12"
+  },
+  "dependencies": {
+    "@electric-sql/pglite": "^0.5.17",
+    "pg": "^8.23.1"
+  }
+}
